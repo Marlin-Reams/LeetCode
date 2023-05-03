@@ -5,16 +5,5 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[List[int]]
         """
-        answer = [[], []]
-        
-        for num in nums1:
-            print(num)
-            if num not in nums2:
-                if num not in answer[0]:
-                    answer[0].append(num)
-        
-        for num in nums2:
-            if num not in nums1:
-                if num not in answer[1]:
-                    answer[1].append(num)
-        return answer
+        nums1, nums2 = set(nums1),set(nums2)
+        return (list(nums1-nums2), list(nums2-nums1)) 
